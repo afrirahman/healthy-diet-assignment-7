@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1,
+    "name": "Healthy Breakfast Box",
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1669137055808-6534e6cb8d60?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     "banner": "https://images.unsplash.com/photo-1598196101567-07d8be55dbef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "frequency": "Monthly",
+    "price": 29.99,
+    "description": "Start your day with a nutritious breakfast box filled with whole grains, oats, nuts, dried fruits, and healthy breakfast essentials.",
+    "category": "Healthy Breakfast",
+    "features": [
+      "Whole Grain Cereals",
+      "Organic Oats",
+      "Mixed Nuts and Seeds",
+      "Dried Fruits"
+    ],
+    "subscription_benefits": [
+      "Fresh Breakfast Ingredients Every Month",
+      "Healthy Eating Tips",
+      "Discount on Future Boxes"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 245,
+    "is_popular":true
+  },
+  {
+    "id": 2,
+    "name": "Fresh Fruit Box",
+    "thumbnail": "https://images.unsplash.com/photo-1628689469838-524a4a973b8e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://images.unsplash.com/photo-1629567971554-0cc0883dd57b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "frequency": "Weekly",
+    "price": 24.99,
+    "description": "Enjoy a fresh selection of seasonal fruits carefully chosen to support a healthy and balanced diet.",
+    "category": "Fresh Fruits",
+    "features": [
+      "Seasonal Fresh Fruits",
+      "Vitamin-Rich Produce",
+      "Naturally Sweet Snacks",
+      "Farm-Fresh Selection"
+    ],
+    "subscription_benefits": [
+      "Weekly Fresh Fruit Delivery",
+      "Seasonal Fruit Variety",
+      "Healthy Snack Recommendations"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 318
+  },
+  {
+    "id": 3,
+    "name": "Protein Power Box",
+    "thumbnail": "https://images.unsplash.com/photo-1569442130148-5dd96b7e4ec9?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://afoodcentriclife.com/wp-content/uploads/2024/03/protein-balls-hero-2931.jpg",
+    "frequency": "Monthly",
+    "price": 34.99,
+    "description": "A protein-rich food box designed for active lifestyles, featuring nutritious snacks and ingredients to support daily energy needs.",
+    "category": "Protein Foods",
+    "features": [
+      "Protein Bars",
+      "Roasted Chickpeas",
+      "Peanut Butter",
+      "Healthy Trail Mix"
+    ],
+    "subscription_benefits": [
+      "Monthly Protein Snack Collection",
+      "Fitness-Friendly Food Guide",
+      "Exclusive Subscriber Discounts"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 189,
+    "is_popular":true
+  },
+  {
+    "id": 4,
+    "name": "Organic Wellness Box",
+    "thumbnail": "https://valleymist.co.uk/cdn/shop/files/Natural-and-Organic-Wellness-Gift-Box-2.jpg?v=1775140486",
+    "banner": "https://www.stonehollowfarmstead.com/cdn/shop/files/stone-hollow-farmstead-winter-wellness-gift-box-shf-gift-box-default-title-37541406343420_1400x.jpg?v=1690814609",
+    "frequency": "Monthly",
+    "price": 39.99,
+    "description": "Discover organic food essentials including natural grains, legumes, and wholesome ingredients for a healthier lifestyle.",
+    "category": "Organic Foods",
+    "features": [
+      "Organic Grains",
+      "Natural Legumes",
+      "Healthy Cooking Ingredients",
+      "Chemical-Free Food Options"
+    ],
+    "subscription_benefits": [
+      "Organic Food Discovery",
+      "Healthy Recipe Collection",
+      "Early Access to New Products"
+    ],
+    "ratings": 4.6,
+    "number_of_reviews": 156
+  },
+  {
+    "id": 5,
+    "name": "Healthy Snack Box",
+    "thumbnail": "https://images.unsplash.com/photo-1571510175566-8aa5f41ebcc5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "banner": "https://www.cratejoy.com/cdn/shop/products/nVqrBQMZTRGIXD27Nzfw.jpg?v=1698466356&width=1600",
+    "frequency": "Monthly",
+    "price": 27.99,
+    "description": "A delicious collection of healthy snacks made for busy people who want nutritious alternatives to traditional junk food.",
+    "category": "Healthy Snacks",
+    "features": [
+      "Low-Sugar Snack Bars",
+      "Mixed Nuts",
+      "Baked Vegetable Chips",
+      "Dark Chocolate"
+    ],
+    "subscription_benefits": [
+      "Monthly Healthy Snack Variety",
+      "Snack Planning Tips",
+      "Subscriber-Only Offers"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 278,
+    "is_popular":true
+  },
+  {
+    "id": 6,
+    "name": "Balanced Diet Box",
+    "thumbnail": "https://thesybarite.co/img_cache/containers/assets/balance-box-contents-1024x683.jpg/6da1b195e2d5a131725bc2b607ce29a1.webp",
+    "banner": "https://thesybarite.co/img_cache/containers/assets/balance-box-day-plan-1024x683.jpg/b965a84cd1fed317d4478140db832c53.webp",
+    "frequency": "Monthly",
+    "price": 44.99,
+    "description": "A balanced diet box featuring nutritious ingredients, whole foods, and healthy meal essentials to support everyday wellness.",
+    "category": "Balanced Diet",
+    "features": [
+      "Whole Food Ingredients",
+      "Healthy Grains and Pulses",
+      "Fresh Vegetable Selection",
+      "Nutritious Meal Essentials"
+    ],
+    "subscription_benefits": [
+      "Monthly Balanced Food Collection",
+      "Healthy Meal Planning Guide",
+      "Discount on Future Subscriptions"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 352,
+    "is_popular":true
+  }
+]
