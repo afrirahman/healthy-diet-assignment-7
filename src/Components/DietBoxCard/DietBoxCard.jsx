@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdStarRate } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const DietBoxCard = ({box}) => {
+
+ 
+
     return (
         <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
                
@@ -78,7 +81,7 @@ const DietBoxCard = ({box}) => {
           </div>
 
           <Link
-            to={`/diet-box/${box.id}`}
+            to={`/diet_boxes/${box.id}`}
             className="bg-[#86be5c] text-white px-4 py-2 rounded-lg hover:bg-[#719f4d] transition"
           >
             View Details
@@ -87,6 +90,7 @@ const DietBoxCard = ({box}) => {
         </div>
 
       </div>
+      
             
         </div>
     );

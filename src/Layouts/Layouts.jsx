@@ -1,20 +1,24 @@
 import React from 'react';
 import Navbar from '../Components/Navbar/Navbar';
-import DietSliders from '../DietSliders/DietSliders';
-import DietBoxes from '../Pages/DietBoxes/DietBoxes';
+import Footer from '../Components/Footer/Footer';
+import { Outlet } from 'react-router';
 
 const Layouts = () => {
     return (
         <div>
            <header>
              <Navbar></Navbar>
-            <DietSliders></DietSliders>
+            
            </header>
            <main>
-            <section>
-                <DietBoxes></DietBoxes>
-            </section>
+ 
+          <Outlet></Outlet>
+       
            </main>
+
+           <footer className="bg-[#37561e] text-white mt-16">
+            <Footer ></Footer>
+           </footer>
         </div>
     );
 };
