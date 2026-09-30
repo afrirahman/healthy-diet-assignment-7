@@ -1,12 +1,37 @@
-import React from "react";
+import React, { use } from "react";
 import Logo from "../../assets/foodLogo.jpg";
 import { Link, NavLink } from "react-router";
 import { FaHome } from "react-icons/fa";
 import { GiMeal } from "react-icons/gi";
 import { MdLiveHelp, MdOutlineLabelImportant } from "react-icons/md";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
+  const {user , logout} = use(AuthContext);
+
+  const handleLogOut = () =>{
+    
+    logout()
+    .then(()=>{
+      Swal.fire({
+            title: 'Logged Out!',
+            text: 'You have been logged out successfully.',
+            icon: 'success',
+            confirmButtonColor: '#86be5c'
+          });
+    })
+    .catch((error)=>{
+       Swal.fire({
+              title: 'Logout Failed',
+              text: error.message,
+              icon: 'error',
+              confirmButtonText: 'Try Again'
+          });
+    })
+  }
+
     return (
        <div className="navbar bg-[#86be5c]  shadow-sm relative z-50">
   <div className="navbar-start">
@@ -59,7 +84,9 @@ const Navbar = () => {
       
   </div>
   <div className="navbar-end">
-    <Link to="/auth/login" className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Login</Link>
+    {user ? (<button onClick={handleLogOut} className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Logout</button>) :
+     (<Link to="/auth/login" className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Login</Link>
+  )}
   </div>
 </div>
     );

@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Navbar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
+
 
 const NotFound = () => {
     return (
-        <>
-        <div>
-            <Navbar></Navbar>
-        </div>
+       
+     
         <div className="min-h-[70vh] flex items-center justify-center px-4">
           <div className='text-center'>
              <h1 className="text-8xl md:text-9xl font-bold text-[#86be5c]">
@@ -26,10 +23,9 @@ const NotFound = () => {
                
             </div>  
         </div>
-        <div className="bg-[#37561e] text-white mt-16">
-            <Footer></Footer>
-        </div>
-        </>
+       
+       
+       
         
     );
 };

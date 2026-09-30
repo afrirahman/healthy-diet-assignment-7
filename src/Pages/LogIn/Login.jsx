@@ -2,20 +2,31 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Login = () => {
+
+      const handleLogIn = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;        
+        
+      }
+
     return (
         <div className='flex justify-center min-h-screen items-center text-[#324324]'>
          
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
         <h1 className='text-center font-bold text-[#548031] pt-4 text-xl'>Login here</h1>
       <div className="card-body">
-        <form action="">
+        <form onSubmit={handleLogIn} action="">
            <fieldset className="fieldset">
+            {/* email */}
           <label className="label text-[#548031]">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input name='email' type="email" className="input" placeholder="Email" />
+          {/* password */}
           <label className="label text-[#548031]">Password</label>
-          <input type="password" className="input" placeholder="Password" />
+          <input name='password' type="password" className="input" placeholder="Password" />
           <div><a className="link link-hover text-[#548031]">Forgot password?</a></div>
-          <button className="btn bg-[#86be5c] mt-4 text-primary">Login</button>
+          <button type='submit' className="btn bg-[#86be5c] mt-4 text-primary">Login</button>
         </fieldset> 
         </form>
 

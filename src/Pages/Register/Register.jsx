@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -15,16 +16,55 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        // password validation
+        if(password.length < 6){
+          Swal.fire({
+        title: 'Invalid Password',
+        text: 'Password must be at least 6 characters.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
+    return;
+        }
+         if(!/[A-Z]/.test(password)){
+          Swal.fire({
+        title: 'Invalid Password',
+        text: 'Password must contain at least one uppercase letter.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
+    return; 
+         }
+
+         if(!/[a-z]/.test(password)){
+          Swal.fire({
+        title: 'Invalid Password',
+        text: 'Password must contain at least one lowercase letter.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+    });
+    return;
+         }
        
         createUser(email,password)
         .then(result=>{
           const user =result.user;
           setUser(user);
+          Swal.fire({
+            title: 'Welcome!',
+            text: 'Registration successful.',
+            icon: 'success',
+            confirmButtonText: 'Continue'
+        });
         })
          .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
+     Swal.fire({
+        title: 'Registration Failed',
+        text: error.message,
+        icon: 'error',
+        confirmButtonText: 'Try Again'
+    });
   });
       }
 
