@@ -109,7 +109,7 @@ const Register = () => {
            
           <input type={showPass ? "text": "password"} className="input w-full" name='password' placeholder="Write your Password" 
           required/>
-          <button type="button" onClick={()=>setShowPass(!showPass)} className='absolute right-7 top-1/2 -translate-y-1/2'>
+          <button type="button" onClick={()=>setShowPass(!showPass)} className='absolute right-4 top-1/2 -translate-y-1/2'>
         {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
           </button>
          </div>

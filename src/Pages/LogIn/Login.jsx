@@ -1,15 +1,21 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
     const {login,setUser} = use(AuthContext);
+
+     const [showPass, setShowPass]= useState(false);
+    const [email, setEmail] = useState("");
+
     const navigate = useNavigate();
     const location = useLocation();
 
       const handleLogIn = (e) =>{
         e.preventDefault();
+        
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -18,7 +24,6 @@ const Login = () => {
         login(email,password)
         .then((result)=>{
           const user = result.user;
-          console.log(user);
           setUser(user);
 
            Swal.fire({
@@ -53,13 +58,34 @@ const Login = () => {
       <div className="card-body">
         <form onSubmit={handleLogIn} action="">
            <fieldset className="fieldset">
+
             {/* email */}
           <label className="label text-[#548031]">Email</label>
-          <input name='email' type="email" className="input" placeholder="Email" />
+          <input 
+          name='email' 
+          type="email" 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="input w-full" placeholder="Email" />
+
           {/* password */}
           <label className="label text-[#548031]">Password</label>
-          <input name='password' type="password" className="input" placeholder="Password" />
-          <div><a className="link link-hover text-[#548031]">Forgot password?</a></div>
+          <div className='relative'>
+          <input name='password' type={showPass ? "text": "password"}  className="input w-full" placeholder="Password" />
+           <button type="button" onClick={()=>setShowPass(!showPass)} className='absolute right-4 top-1/2 -translate-y-1/2'>
+                  {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                    </button>
+          </div>
+          
+          <div>
+            <button type="button" onClick={()=>
+              navigate("/auth/forget_password",
+                {state:{email:email}}
+              ) }
+              className="link link-hover text-[#548031]"
+           > Forgot password?</button>
+          </div>
+
           <button type='submit' className="btn bg-[#86be5c] mt-4 text-primary">Login</button>
         </fieldset> 
         </form>

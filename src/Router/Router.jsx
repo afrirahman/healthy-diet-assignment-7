@@ -11,6 +11,7 @@ import Register from "../Pages/Register/Register";
 import AuthLayout from "../Layouts/AuthLayout";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Profile from "../Pages/Profile/Profile";
+import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 
 const router = createBrowserRouter(
     [
@@ -64,6 +65,10 @@ const router = createBrowserRouter(
                     path:"/auth/register",
                     element:<Register></Register>
                 },
+                {
+                    path:"/auth/forget_password",
+                    element:<ForgetPassword></ForgetPassword>
+                }
                 
 
             ]
