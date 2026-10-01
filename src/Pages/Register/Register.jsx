@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 
 const Register = () => {
-  const {createUser,setUser} = use(AuthContext);
+  const {createUser,setUser,updateUserProfile} = use(AuthContext);
 
       const handleRegister = (e) =>{
 
@@ -16,6 +16,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(photoURL,name)
 
         // password validation
         if(password.length < 6){
@@ -48,16 +49,22 @@ const Register = () => {
          }
        
         createUser(email,password)
-        .then(result=>{
-          const user =result.user;
-          setUser(user);
-          Swal.fire({
+        .then(()=>{
+          return updateUserProfile(name,photoURL);
+        })
+          .then((updatedUser)=>{
+            setUser(updatedUser);
+
+         Swal.fire({
             title: 'Welcome!',
             text: 'Registration successful.',
             icon: 'success',
             confirmButtonText: 'Continue'
         });
-        })
+          })
+          
+         
+      
          .catch((error) => {
      Swal.fire({
         title: 'Registration Failed',

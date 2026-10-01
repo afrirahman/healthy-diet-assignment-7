@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const {login,setUser} = use(AuthContext);
 
       const handleLogIn = (e) =>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
-        const password = form.password.value;        
+        const password = form.password.value;
+        
+        login(email,password)
+        .then((result)=>{
+          const user = result.user;
+          console.log(user);
+          setUser(user);
+           Swal.fire({
+        title: 'Login Successful!',
+        text: 'Welcome back',
+        icon: 'success',
+        confirmButtonColor: '#86be5c',
+        confirmButtonText: 'Continue'
+    
+      });
+        })
+        .catch((error)=>{
+          console.log(error);
+          Swal.fire({
+        title: 'Login Failed!',
+        text: 'Invalid email or password.',
+        icon: 'error',
+        confirmButtonColor: '#86be5c',
+        confirmButtonText: 'Try Again'
+      });
+        })
         
       }
 
