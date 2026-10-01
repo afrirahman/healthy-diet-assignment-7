@@ -1,5 +1,5 @@
 import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -10,6 +10,9 @@ const Register = () => {
   const {createUser,setUser,updateUserProfile, loginWithGoogle} = use(AuthContext);
 
   const [showPass, setShowPass]= useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
 
     const handleGoogleLogin =()=>{
@@ -95,6 +98,8 @@ const Register = () => {
             text: 'Registration successful.',
             icon: 'success',
             confirmButtonText: 'Continue'
+        }).then(() => {
+          navigate("/");
         });
           })
           

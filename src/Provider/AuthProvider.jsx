@@ -15,18 +15,15 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
 
     const createUser=(email,password)=>{
-         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const login =(email, password) => {
-         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
        
     };
 
     const updateUserProfile = (name,photoURL) =>{
-         setLoading(true);
         return updateProfile(auth.currentUser,{
             displayName: name,
             photoURL: photoURL
