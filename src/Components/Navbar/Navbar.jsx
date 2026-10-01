@@ -83,8 +83,25 @@ const Navbar = () => {
           </div>
       
   </div>
+
   <div className="navbar-end">
-    {user ? (<button onClick={handleLogOut} className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Logout</button>) :
+    {user ? (
+      <div className=" flex items-center gap-3">
+
+        {/* profile */}
+        <div className="relative group">
+          <Link to="/profile">
+            <img className="w-10 h-10 rounded-full object-cover border-2 border-white cursor-pointer" src={user.photoURL} alt={user.displayName}></img>
+          </Link>
+
+        {/* hover profile */}
+        <div className="absolute right-0 top-12 hidden group-hover:block bg-white text-[#324324] px-4 py-2 rounded-lg shadow-lg whitespace-nowrap z-[100] font-semibold">
+          {user.displayName}
+        </div>
+        </div>
+        <button onClick={handleLogOut} className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Logout</button>
+      </div>
+      ) :
      (<Link to="/auth/login" className="btn bg-orange-100 font-bold sm:w-25 lg:w-30 text-[#324324] sm:text-lg ">Login</Link>
   )}
   </div>

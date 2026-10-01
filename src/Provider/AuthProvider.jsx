@@ -26,14 +26,16 @@ const AuthProvider = ({children}) => {
     };
 
     const logout = () =>{
-        return signOut(auth);
+        return signOut(auth).then(()=>{
+            setUser(null);
+        })
     };
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
             setUser(currentUser);
-        })
-        return unsubscribe();
+        });
+        return unsubscribe;
     },[]);
 
     const authData ={

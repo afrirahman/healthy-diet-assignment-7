@@ -1,12 +1,15 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 
 const Register = () => {
   const {createUser,setUser,updateUserProfile} = use(AuthContext);
+
+  const [showPass, setShowPass]= useState(false);
 
       const handleRegister = (e) =>{
 
@@ -87,23 +90,29 @@ const Register = () => {
 
             {/* Name */}
           <label className="label text-[#548031]">Name</label>
-          <input type="text" name='name' className="input" placeholder="Write your name" 
+          <input type="text" name='name' className="input w-full" placeholder="Write your name" 
           required/>
 
           {/* photo url */}
           <label className="label text-[#548031]">Photo URL</label>
-          <input type="text" name='photoURL' className="input" placeholder="Photo url"
+          <input type="text" name='photoURL' className="input w-full" placeholder="Photo url"
           required />
 
           {/* email */}
           <label className="label text-[#548031]">Email</label>
-          <input type="email" name='email' className="input" placeholder="Write your Email" 
+          <input type="email" name='email' className="input w-full" placeholder="Write your Email" 
           required/>
 
           {/* password */}
           <label className="label text-[#548031]">Password</label>
-          <input type="password" className="input" name='password' placeholder="Write your Password" 
+         <div className="relative">
+           
+          <input type={showPass ? "text": "password"} className="input w-full" name='password' placeholder="Write your Password" 
           required/>
+          <button type="button" onClick={()=>setShowPass(!showPass)} className='absolute right-7 top-1/2 -translate-y-1/2'>
+        {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+          </button>
+         </div>
 
           <button type='submit' className="btn bg-[#86be5c] mt-4 text-primary">Register</button>
         </fieldset> 

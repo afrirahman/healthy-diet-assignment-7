@@ -1,30 +1,36 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
     const {login,setUser} = use(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
       const handleLogIn = (e) =>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+
         
         login(email,password)
         .then((result)=>{
           const user = result.user;
           console.log(user);
           setUser(user);
+
            Swal.fire({
         title: 'Login Successful!',
         text: 'Welcome back',
         icon: 'success',
         confirmButtonColor: '#86be5c',
         confirmButtonText: 'Continue'
-    
+      }).then(()=>{
+        navigate(location.state?.from?.pathname || "/");
       });
+
         })
         .catch((error)=>{
           console.log(error);

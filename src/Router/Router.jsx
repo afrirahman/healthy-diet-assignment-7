@@ -9,6 +9,8 @@ import NotFound from "../Pages/404Page/NotFound";
 import Login from "../Pages/LogIn/Login";
 import Register from "../Pages/Register/Register";
 import AuthLayout from "../Layouts/AuthLayout";
+import PrivateRoute from "../Provider/PrivateRoute";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter(
     [
@@ -28,8 +30,10 @@ const router = createBrowserRouter(
                 },
                 {
                     path:'diet_boxes/:id',
-                    element:<DietDetails></DietDetails>
+                    element:<PrivateRoute>
+                        <DietDetails></DietDetails>
 
+                    </PrivateRoute>
                 },
                 {
                     path:'works',
@@ -39,6 +43,11 @@ const router = createBrowserRouter(
                     path:'why_us',
                     element:<WhyUS></WhyUS>
                 },
+                {
+                    path:"/profile",
+                    element:<PrivateRoute>
+                        <Profile></Profile>
+                    </PrivateRoute>}
                
             ]
             
@@ -52,9 +61,10 @@ const router = createBrowserRouter(
                     element:<Login></Login>
                 },
                 {
-                    path:"register",
+                    path:"/auth/register",
                     element:<Register></Register>
                 },
+                
 
             ]
         },
