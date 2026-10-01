@@ -11,13 +11,13 @@ const Layouts = () => {
              <Navbar></Navbar>
             <PageBanner></PageBanner>
            </header>
-           <main>
+           <main className="">
  
           <Outlet></Outlet>
        
            </main>
 
-           <footer className="bg-[#37561e] text-white mt-16">
+           <footer className="bg-[#37561e] text-white ">
             <Footer ></Footer>
            </footer>
         </div>

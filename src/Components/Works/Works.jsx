@@ -47,7 +47,7 @@ const Works = () => {
         </div>
 
         {/* work card */}
-        <div className='w-11/12 mx-auto  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div className='w-11/12 mx-auto mb-20  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
         {
             workData.map((data)=>(
                 <div key={data.id}

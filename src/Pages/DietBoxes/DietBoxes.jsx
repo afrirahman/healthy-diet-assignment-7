@@ -19,7 +19,7 @@ const DietBoxes = () => {
     const displayedBoxes = showAll ? dietBoxes : dietBoxes.slice(0,3) ;
     
     return (
-        <div className='w-11/12 mx-auto mt-16'>
+        <div className='w-11/12 mx-auto mt-20 mb-16'>
             <div className='text-center mb-10'>
                 <h1 className='text-4xl font-bold text-[#37561e]'>Our Diet boxes</h1>
                 <p className='mt-3 text-gray-600'>Choose a healthy subscription box that fits your lifestyle.</p>
